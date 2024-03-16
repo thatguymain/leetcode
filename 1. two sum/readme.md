@@ -151,4 +151,13 @@ Total Big O calculation: O(n)
 ___________
 
 ## Additional information
-![alt text](hhttps://github.com/thatguymain/leetcode/tree/main/scr/sdtbigo.png?raw=true)
+
+
+<p align="center">
+<img src="https://github.com/thatguymain/leetcode/blob/main/scr/sdtbigo.png" 
+        style="display: block; margin: 0 auto" />
+</p>
+<p align="center">
+<img src="https://github.com/thatguymain/leetcode/blob/main/scr/sortbigo.png" 
+        style="display: block; margin: 0 auto" />
+</p>
