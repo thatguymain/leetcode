@@ -1,0 +1,46 @@
+<!DOCTYPE html> <html lang="en"> 
+    <head> <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>C++ Code</title> 
+        <style> 
+        body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; } 
+        .keyword { color: blue; } 
+        .comment { color: green; } 
+        </style> 
+    </head> 
+    <body> 
+        <pre> 
+            <span class="keyword">class</span> Solution 
+            {
+                <span class="keyword">public</span>:
+                    <span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt;& nums, <span class="keyword">int</span> target) <span class="comment">     // O(1) - accessing parameters</span> 
+                    {
+                        <span class="keyword">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; freqMap; <span class="comment">                   // O(1) - initializing a vector</span> 
+                        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; nums.size(); i++) <span class="comment">             // O(n) - looping through the input vector where n is the size</span> 
+                            {
+                                freqMap.push_back(make_pair(nums[i], i)); <span class="comment"> // O(1) - creating pairs and pushing them into freqMap</span> 
+                            } 
+                        sort(freqMap.begin(), freqMap.end()); <span class="comment">             // O(n * log(n)) - sorting the freqMap vector</span> 
+                        <span class="keyword">for</span> (auto it : freqMap) <span class="comment">                           // O(n) - iterating over elements in freqMap</span> 
+                            {
+                                <span class="keyword">int</span> val = it.first; <span class="comment">                       // O(1) - accessing element from pair</span> 
+                                <span class="keyword">int</span> freq = it.second; <span class="comment">                     // O(1) - accessing element from pair</span> 
+                            } 
+                        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; freqMap.size(); ++i) <span class="comment">          // O(n) - iterating over elements in freqMap</span> 
+                            {
+                                <span class="keyword">int</span> m; <span class="comment">                                    // O(1) - declaring an integer</span> 
+                                <span class="keyword">int</span> s = i + 1; <span class="comment">                            // O(1) - calculating sum</span> 
+                                <span class="keyword">int</span> e = freqMap.size(); <span class="comment">                   // O(1) - initializing e</span> 
+                                <span class="keyword">int</span> t = target - freqMap[i].first; <span class="comment">        // O(1) - calculating target difference</span>
+                                <span class="keyword">while</span> (s &lt; e) <span class="comment">                             // O(log(n)) - binary search until s is less than e</span> 
+                                    {
+                                        m = s + (e - s) / 2; <span class="comment">              // O(1) - calculating middle element</span> 
+                                        t &lt; freqMap[m].first ? e = m : s = m + 1; <span class="comment">     // O(1) - updating bounds</span> 
+                                        <span class="keyword">if</span> (freqMap[m].first == t) { std::cout &lt;&lt; "is"; <span class="keyword">return</span> {freqMap[i].second, freqMap[m].second}; <span class="comment">       // O(1) - checking for target element match</span> 
+                                    } 
+                            } 
+                        <span class="keyword">return</span> {0, 0}; <span class="comment">// O(1) - returning default values</span> 
+                    } 
+            };
+        
+        Total Big O calculation: O(1) + O(n) + O(n*log(n)) + O(log(n)) =  O(n*log(n))</pre> </body> </html>
