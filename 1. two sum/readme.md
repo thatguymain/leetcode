@@ -106,8 +106,11 @@ class Solution
                         {
                             m = s + (e - s) / 2;               // O(1) - calculating middle element 
                             t < freqMap[m].first ? e = m : s = m + 1;      // O(1) - updating bounds 
-                            if (freqMap[m].first == t) { std::cout << "is"; return {freqMap[i].second, freqMap[m].second};        // O(1) - checking for target element match 
-                        } 
+                            if (freqMap[m].first == t) 
+                            { 
+                                return {freqMap[i].second, freqMap[m].second};        // O(1) - checking for target element match 
+                            } 
+                        }
                 } 
             return {0, 0}; // O(1) - returning default values 
         } 
