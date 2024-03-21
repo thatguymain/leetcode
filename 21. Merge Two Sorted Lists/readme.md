@@ -11,6 +11,8 @@ __________________
 
 ### Example 1:
 
+![merge_ex1](https://github.com/thatguymain/leetcode/assets/163669168/69cb7a7f-66bf-4351-9498-be7f75c43508)
+
 **Input:** list1 = [1,2,4], list2 = [1,3,4]
 
 **Output:** [1,1,2,3,4,4]
@@ -130,7 +132,7 @@ int main()
 }
 ```
 
-Good, this is a normal linked list implementation. Now that we've refreshed our memory lets try to look at the conditions again. Given function `mergeTwoLists` takes ListNode* list1, ListNode* list2. This means that the leetcode has already created linked list somewhere and is only giving us the `head` of each list, so if we want to print this list we can dimply do it in the `mergeTwoLists` fuction using the following code
+Good, this is a normal linked list implementation. Now that we've refreshed our memory lets try to look at the conditions again. Given function `mergeTwoLists` takes ListNode* list1, ListNode* list2. This means that the leetcode has already created linked list somewhere and is only giving us the `head` of each list, so if we want to print this list we can simply do it in the `mergeTwoLists` fuction using the following code
 
 ```cpp
 class Solution {
@@ -152,7 +154,7 @@ There are several ways to get the solution, 1 - we can use recursive code, 2 - w
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         ListNode* t1 = list1;           // storing `head`
         ListNode* t2 = list2;
-        ListNode* res = new ListNode(-101); // creating list with `answer`, -101 because of constraints in task
+        ListNode* res = new ListNode(-101); // creating list for store `answer`, -101 because value means nothing =)
         ListNode* resHead = res; // storing `res` head
         while (t1 != nullptr && t2 != nullptr) {
             if (t1->val < t2->val)      //compare values
@@ -170,7 +172,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 
         res->next = (t1 != nullptr) ? t1 : t2;   // for the case when one list is shorter than the other
 
-        return resHead->next;
+        return resHead->next;  // ->next, because `head` start from -101 =)
     }
 ```
 
